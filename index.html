@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login/Registration</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome!</h1>
+    <div class="tabs">
+      <a href="#" id="login-tab" class="active">Login</a>
+      <a href="#" id="register-tab">Register</a>
+    </div>
+    <div id="login" class="tab-content active">
+      <form action="back-end/api/login/login.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+
+        <input type="submit" value="Login">
+      </form>
+    </div>
+    <div id="register" class="tab-content">
+      <form action="register.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <input type="submit" value="Register">
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

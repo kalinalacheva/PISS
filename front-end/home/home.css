@@ -1,0 +1,69 @@
+/* Navigation bar */
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ADD8E6;
+    padding: 0px;
+}
+
+/* Navbar links */
+nav a {
+    display: block;
+    text-align: center;
+    padding: 20px 50px;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+/* Hover effect for navbar links */
+nav a:hover {
+    background-color: #e9f4fb;
+   
+}
+
+/* Tab content */
+.tab-content {
+    display: none;
+   
+    background-color: #F0F8FF;
+}
+
+/* Active tab content */
+.tab-content.active {
+    display: block;
+}
+
+/* Form elements */
+input[type="text"], input[type="password"], input[type="email"] {
+    background-color: #E6E6FA;
+    border: none;
+    padding: 12px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+/* Form labels */
+label {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Submit button */
+input[type="submit"] {
+    background-color: #87CEFA;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+input[type="submit"]:hover {
+    background-color: #00008B;
+}
