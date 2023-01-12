@@ -1,26 +1,39 @@
 <?php
-session_start();
+  // Connect to the database
+  $host = 'localhost'; // replace with your hostname
+  $username = 'root'; // replace with your username
+  $password = ''; // replace with your password
+  $dbname = 'db1'; // replace with your database name
 
-//connect to the database
-$conn = new mysqli($servername, $username, $password, $dbname);
+  $conn = mysqli_connect($host, $username, $password, $dbname);
+  
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
 
-// check for a post request
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the username and password from the request
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    
-    // prepare the query
-    $query = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
-    $query->bind_param("ss", $username, $password);
-    $query->execute();
-    $result = $query->get_result();
-    if($result->num_rows > 0){
-        // user found
-        $_SESSION['username'] = $username;
-        header("location: welcome.php");
-    }else{
-        // user not found
-        $error = "Invalid username or password";
-    }
-}
+  // Get the posted data
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  $query = "SELECT password FROM users WHERE username = '$username'";
+  $result = mysqli_query($conn, $query);
+
+  if (mysqli_num_rows($result) == 1) {
+      // Fetch the result as an associative array
+      $row = mysqli_fetch_assoc($result);
+      $stored_hash = $row['password'];
+  }else $stored_hash = '';
+
+  if (password_verify($password, $stored_hash)) {
+    // User exists, log them in
+    // Start a session
+    session_start();
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $username;
+    header("Location: ../../../front-end/home/home.html");
+  } else {
+    // User does not exist, show an error message
+    echo "Invalid username or password.";
+  }
+  mysqli_close($conn);
+?>

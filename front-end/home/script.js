@@ -9,6 +9,10 @@ let homeContent = document.getElementById("home");
 let catalogueContent = document.getElementById("catalogue");
 let contactsContent = document.getElementById("contacts");
 
+homeContent.style.display = "block";
+catalogueContent.style.display = "none";
+contactsContent.style.display = "none";
+
 // Add event listeners to the tabs
 homeTab.addEventListener("click", function(){
   homeContent.style.display = "block";
