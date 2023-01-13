@@ -30,7 +30,7 @@ USE `db1`;
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
   `username` varchar(30) NOT NULL UNIQUE,
   `password` varchar(255) NOT NULL,
   `email` varchar(50) NOT NULL UNIQUE

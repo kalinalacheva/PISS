@@ -12,7 +12,7 @@
       <a href="#" id="register-tab">Register</a>
     </div>
     <div id="login" class="tab-content active">
-      <form action="back-end/api/login/login.php" method="post">
+      <form id="login-form">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username"><br>
 
@@ -21,9 +21,43 @@
 
         <input type="submit" value="Login">
       </form>
+      <script>
+        // get the login form
+        var form = document.getElementById("login-form");
+      
+        // listen for the submit event
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+      
+          // get the form data
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+      
+          // make an AJAX request to the login.php script
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "back-end/api/login/login.php", true);
+          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          xhr.onreadystatechange = function() {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                  // parse the JSON response
+                  var data = JSON.parse(xhr.responseText);
+                  if(data.status === "success") {
+                      // redirect the user to the homepage
+                      window.location.href = "front-end/home/home.html";
+                  } else {
+                      // display an error message
+                      alert(data.message);
+                  }
+              }
+          };
+          xhr.send("username=" + username + "&password=" + password);
+        });
+      </script>
+       
     </div>
     <div id="register" class="tab-content">
-      <form action="back-end/api/registration/registration.php" method="post">
+     <!--    <form method="post" action="back-end/api/registration/registration.php"> -->
+      <form id="register-form">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username"><br>
 
@@ -35,6 +69,39 @@
 
         <input type="submit" value="Register">
       </form>
+      <script>
+        // get the register form
+        var form = document.getElementById("register-form");
+      
+        // listen for the submit event
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+      
+          // get the form data
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          var email = document.getElementById("email").value;
+      
+          // make an AJAX request to the register.php script
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "back-end/api/registration/registration.php", true);
+          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          xhr.onreadystatechange = function() {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                  // parse the JSON response
+                  var data = JSON.parse(xhr.responseText);
+                  if(data.status === "success") {
+                      // redirect the user to the homepage
+                      window.location.href = "front-end/home/home.html";
+                  } else {
+                      // display an error message
+                      alert(data.message);
+                  }
+              }
+          };
+          xhr.send("username=" + username + "&password=" + password + "&email=" + email);
+        });
+      </script>
     </div>
   </div>
   <script src="script.js"></script>

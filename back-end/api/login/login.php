@@ -1,39 +1,59 @@
 <?php
+
+//start session
+session_start();
+
   // Connect to the database
   $host = 'localhost'; // replace with your hostname
   $username = 'root'; // replace with your username
   $password = ''; // replace with your password
   $dbname = 'db1'; // replace with your database name
 
-  $conn = mysqli_connect($host, $username, $password, $dbname);
-  
-  if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
 
-  // Get the posted data
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+//connect to the database
+$conn = new mysqli($host, $username, $password, $dbname);
 
-  $query = "SELECT password FROM users WHERE username = '$username'";
-  $result = mysqli_query($conn, $query);
+//check for a post request
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    //get the form data
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-  if (mysqli_num_rows($result) == 1) {
-      // Fetch the result as an associative array
-      $row = mysqli_fetch_assoc($result);
-      $stored_hash = $row['password'];
-  }else $stored_hash = '';
+    //prepare the query
+    $query = $conn->prepare("SELECT * FROM users WHERE username = ?");
+    $query->bind_param("s", $username);
+    $query->execute();
+    $result = $query->get_result();
+    if($result->num_rows > 0){
+        //user found
+        $user = $result->fetch_assoc();
+        if(password_verify($password, $user['password'])){
+            //password is correct
+            $_SESSION['username'] = $username;
+            $response = array(
+                "status" => "success",
+                "message" => "User logged in successfully"
+            );
+            header("Content-Type: application/json");
+            echo json_encode($response);
+        }else{
+            //password is incorrect
+            $response = array(
+                "status" => "error",
+                "message" => "Invalid password"
+            );
+            header("Content-Type: application/json");
+            echo json_encode($response);
+        }
+    }else{
+        //user not found
+        $response = array(
+            "status" => "error",
+            "message" => "Invalid username"
+        );
+        header("Content-Type: application/json");
+        echo json_encode($response);
+    }
+}
 
-  if (password_verify($password, $stored_hash)) {
-    // User exists, log them in
-    // Start a session
-    session_start();
-    $_SESSION['loggedin'] = true;
-    $_SESSION['username'] = $username;
-    header("Location: ../../../front-end/home/home.html");
-  } else {
-    // User does not exist, show an error message
-    echo "Invalid username or password.";
-  }
-  mysqli_close($conn);
-?>
+  ?>
