@@ -1,0 +1,71 @@
+/* Navigation bar styles */
+nav {
+    background-color: #333;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+  
+  nav a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding:11px;
+    color: #fff;
+    font-size: 25px;
+}
+
+
+nav a:hover {
+    background-color: #fff;
+    color: #333;
+}
+  
+  /* Full-width background image styles */
+  .background-image {
+    background-image: url("background.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .label {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+
+  
+  .cat {
+    width:80%;
+    margin:100px auto 50px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-gap:30px;
+  }
+  
+  
+  .cat img {
+    border-radius: 10px; /* Add rounded corners */
+    border: 2px solid #000000; /* Add a black border */
+    width: 100%;
+    height: 300px; /* Keep the aspect ratio */
+    object-fit: cover; /* Crop and center the image */
+    
+}
+
+
+  
