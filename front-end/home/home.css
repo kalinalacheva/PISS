@@ -97,5 +97,33 @@ footer {
   font-size: 19px;
   padding: 16px 32px;
 }
+h1{
+  position:absolute;
+  font-size:50px;
+  top:230px;
+  color:aliceblue;
+}
+h2 {
+  margin-top:50px;
+  color:#333;
+  }
 
+  #contacts_col{
+    margin-left:210px;
+    width:600px;
+    margin-bottom:55px;
+  }
+  #location{
+    width:470px;
+    margin-left:820px;
+      
+  }
+  #location_pic{
+    position:absolute;
+    top:410px;
+    bottom:100px;
+  }
+  #contact_pic{
+    width:1503px;
+  }
 
