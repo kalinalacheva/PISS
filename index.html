@@ -5,6 +5,11 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  <div id="alert-box">
+    <div id="alert-box-title"></div>
+    <div id="alert-box-message"></div>
+    <button id="alert-box-ok-button">OK</button>
+  </div>
   <div class="container">
     <h1>Welcome!</h1>
     <div class="tabs">
@@ -21,87 +26,24 @@
 
         <input type="submit" value="Login">
       </form>
-      <script>
-        // get the login form
-        var form = document.getElementById("login-form");
       
-        // listen for the submit event
-        form.addEventListener("submit", function(event) {
-          event.preventDefault();
-      
-          // get the form data
-          var username = document.getElementById("username").value;
-          var password = document.getElementById("password").value;
-      
-          // make an AJAX request to the login.php script
-          var xhr = new XMLHttpRequest();
-          xhr.open("POST", "back-end/api/login/login.php", true);
-          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-          xhr.onreadystatechange = function() {
-              if (xhr.readyState === 4 && xhr.status === 200) {
-                  // parse the JSON response
-                  var data = JSON.parse(xhr.responseText);
-                  if(data.status === "success") {
-                      // redirect the user to the homepage
-                      window.location.href = "front-end/home/home.html";
-                  } else {
-                      // display an error message
-                      alert(data.message);
-                  }
-              }
-          };
-          xhr.send("username=" + username + "&password=" + password);
-        });
-      </script>
        
     </div>
     <div id="register" class="tab-content">
-     <!--    <form id="register-form"> -->
-      <form method="post" action="back-end/api/registration/registration.php"></form>
+     <!--    <form method="post" action="back-end/api/registration/registration.php"> -->
+      <form id="register-form">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br>
+        <input type="text" id="reg-username" name="username"><br>
 
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br>
+        <input type="password" id="reg-password" name="password"><br>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br>
+        <input type="email" id="reg-email" name="email"><br>
 
         <input type="submit" value="Register">
       </form>
-     <!-- <script>
-        // get the register form
-        var form = document.getElementById("register-form");
       
-        // listen for the submit event
-        form.addEventListener("submit", function(event) {
-          event.preventDefault();
-      
-          // get the form data
-          var username = document.getElementById("username").value;
-          var password = document.getElementById("password").value;
-          var email = document.getElementById("email").value;
-      
-          // make an AJAX request to the register.php script
-          var xhr = new XMLHttpRequest();
-          xhr.open("POST", "back-end/api/registration/registration.php", true);
-          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-          xhr.onreadystatechange = function() {
-              if (xhr.readyState === 4 && xhr.status === 200) {
-                  // parse the JSON response
-                  var data = JSON.parse(xhr.responseText);
-                  if(data.status === "success") {
-                      // redirect the user to the homepage
-                      window.location.href = "front-end/home/home.html";
-                  } else {
-                      // display an error message
-                      alert(data.message);
-                  }
-              }
-          };
-          xhr.send("username=" + username + "&password=" + password + "&email=" + email);
-        });
-      </script>-->
     </div>
   </div>
   <script src="script.js"></script>

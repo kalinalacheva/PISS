@@ -5,19 +5,30 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 30px;
 }
+
 nav a {
-  color: #fff;
+  display: block;
+  text-align: center;
   text-decoration: none;
-  margin-right: 20px;
+  padding:11px;
+  color: #fff;
+  font-size: 25px;
+}
+
+
+nav a:hover {
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px; /* Add rounded corners */
 }
 
 /* Full-width background image styles */
 .background-image {
-  background-image: url("background.jpg");
+  background-image: url("pictures/background.jpg");
   background-size: cover;
-  height: 500px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,97 +48,54 @@ footer {
   text-align: center;
   padding: 20px;
 }
-/* Navigation bar 
-nav {
-    display: flex;
-    justify-content: space-around;
-    background-color: #ADD8E6;
-    padding: 0px;
+
+
+.cat {
+  width:80%;
+  margin:100px auto 50px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+  grid-gap:30px;
+}
+
+.picture-container{
+  border-radius: 10px; /* Add rounded corners */
+  border: 1px solid #000000; /* Add a black border */
+  cursor: pointer;
+
+}
+
+.picture-container img {
+  border-radius: 10px; /* Add rounded corners */
+  width: 100%;
+  height: 100%; /* Keep the aspect ratio */
+  object-fit: cover; /* Crop and center the image */
+}
+
+.picture-container {
+  position: relative;
+}
+
+.picture-container .overlay {
+  border-radius: 10px; /* Add rounded corners */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* set the color and opacity you want */
+  opacity: 0; /* initially hidden */
+  transition: opacity 0.3s ease;
+}
+
+.picture-container:hover .overlay {
+  opacity: 1; /* show the overlay on hover */
+}
+
+.text {
+  color: white;
+  font-size: 19px;
+  padding: 16px 32px;
 }
 
 
-nav a {
-    display: block;
-    text-align: center;
-    padding: 20px 50px;
-    text-decoration: none;
-    color: black;
-    font-size: 25px;
-}
-
-
-nav a:hover {
-    background-color: #e9f4fb;
-   
-}
-
-
-.tab-content {
-    display: none;
-   
-    background-color: #F0F8FF;
-}
-
-
-.tab-content.active {
-    display: block;
-}
-
-
-input[type="text"], input[type="password"], input[type="email"] {
-    background-color: #E6E6FA;
-    border: none;
-    padding: 12px;
-    margin: 10px 0;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 1.2em;
-    border-radius: 5px;
-}
-
-
-label {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-
-input[type="submit"] {
-    background-color: #87CEFA;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
-}
-
-input[type="submit"]:hover {
-    background-color: #00008B;
-}
-
-.background-image {
-    background-image: url("background.jpg");
-    background-size: cover;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .label {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 36px;
-    text-align: center;
-  }
-  
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-  }
-  */
