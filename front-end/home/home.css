@@ -5,29 +5,19 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 20px;
 }
-
 nav a {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  padding:11px;
   color: #fff;
-  font-size: 25px;
-}
-
-
-nav a:hover {
-  background-color: #fff;
-  color: #333;
+  text-decoration: none;
+  margin-right: 20px;
 }
 
 /* Full-width background image styles */
 .background-image {
   background-image: url("background.jpg");
   background-size: cover;
-  height: 100vh;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,24 +37,97 @@ footer {
   text-align: center;
   padding: 20px;
 }
-
-
-.cat {
-  width:80%;
-  margin:100px auto 50px;
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
-  grid-gap:30px;
+/* Navigation bar 
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ADD8E6;
+    padding: 0px;
 }
 
 
-.cat img {
-  border-radius: 10px; /* Add rounded corners */
-  border: 2px solid #000000; /* Add a black border */
-  width: 100%;
-  height: 300px; /* Keep the aspect ratio */
-  object-fit: cover; /* Crop and center the image */
+nav a {
+    display: block;
+    text-align: center;
+    padding: 20px 50px;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+
+nav a:hover {
+    background-color: #e9f4fb;
+   
+}
+
+
+.tab-content {
+    display: none;
+   
+    background-color: #F0F8FF;
+}
+
+
+.tab-content.active {
+    display: block;
+}
+
+
+input[type="text"], input[type="password"], input[type="email"] {
+    background-color: #E6E6FA;
+    border: none;
+    padding: 12px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+
+label {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+input[type="submit"] {
+    background-color: #87CEFA;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+input[type="submit"]:hover {
+    background-color: #00008B;
+}
+
+.background-image {
+    background-image: url("background.jpg");
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .label {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 36px;
+    text-align: center;
+  }
   
-}
-
-
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  */

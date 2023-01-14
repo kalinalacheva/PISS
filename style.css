@@ -69,33 +69,3 @@ body {
     border: none;
   }
   
-  #alert-box {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    display: none;
-}
-
-#alert-box-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-#alert-box-message {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-#alert-box-ok-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
