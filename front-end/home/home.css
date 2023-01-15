@@ -113,7 +113,7 @@ h2 {
     width:600px;
     margin-bottom:55px;
   }
-  #location{
+  #location-pic{
     width:470px;
     margin-left:820px;
       
@@ -159,7 +159,7 @@ h3 {
   }
   .taste{
     position:absolute;
-    margin-top:427px;
+    margin-top:35%;
     margin-left:-815px;
     font-family: 'Didot','Didot LT STD','Hoefler Text','Garamond','Times New Roman',serif;
     font-weight:bold;
@@ -167,3 +167,102 @@ h3 {
     color:#4a1c08;
   }
 
+  #subscription-form {
+    margin: 20px auto;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    align-items: center;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  #subscription-form input[type="text"], input[type="number"], input[type="email"] {
+    width: 90%;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  
+#alert-box {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #939393;
+  padding: 20px;
+  border-radius: 10px;
+  border-color: #333333;
+  border-width: 2px;
+  display: none;
+}
+
+#alert-box-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#alert-box-message {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#alert-box-ok-button {
+  background-color: #efefef;
+  color: #333333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+table {
+  width: 100%; /* Set the width of the table to 100% of the container */
+  border-collapse: collapse; /* Remove the space between cells */
+  display: none;
+  position: relative;
+}
+
+th, td {
+  border: 1px solid #ddd; /* Add a border to the cells */
+  padding: 8px; /* Add padding to the cells */
+  text-align: left; /* Align the text to the left */
+}
+
+th {
+  background-color: #f2f2f2; /* Add a background color to the header cells */
+  font-weight: bold; /* Make the text bold */
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Add a background color to every second row */
+}
+
+#btn-table {
+  background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

@@ -41,8 +41,20 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
-(1, 'klacheva', '123456', 'klacheva@abc.bg'), 
-(2, 'kali', '123456', 'kali@abc.bg');
+(1, 'klacheva', '$2y$10$6An7OkGwsYHpaSRjz/EKO.6phPowmnRFxB0qmkFXWOpA3Q9Nb6cIy', 'klacheva@abc.bg'), 
+(2, 'kali', '$2y$10$yvCiGtXRZDa/UkFufHKPOOcbsOM608Y.j8ghRBJu7CqTj9Zr2bo5W', 'kali@abc.bg');
+
+CREATE TABLE friends(
+  name varchar(255) NOT NULL,
+  age int(2) NOT NULL,
+  location varchar(255) NOT NULL,
+  email varchar(50) NOT NULL 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO friends (name, age, location, email) VALUES
+('Marina', '25', 'Sofia', 'mimi@abc.bg'),
+('Kristina','46','Burgas', 'krisi_goranova@abc.com');
+
 
 -- --------------------------------------------------------
 

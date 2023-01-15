@@ -10,9 +10,14 @@
       <a href="#" id="home-tab">Home</a>
       <a href="#" id="catalogue-tab">Catalogue</a>
       <a href="#" id="contacts-tab">Contacts</a>
+      <a href="#" id="winepal-tab">WinePal</a>
       <a href="../../index.html" id="exit-tab">Exit</a>
     </nav>
-    
+    <div id="alert-box">
+      <div id="alert-box-title"></div>
+      <div id="alert-box-message"></div>
+      <button id="alert-box-ok-button">OK</button>
+    </div>
     <div id="home" class="tab-content">
       <hr class="first">
       <hr class="second">
@@ -43,13 +48,13 @@
           <div class="picture-container">
             <img src="pictures/m.jpeg">
             <div class="overlay">
-              <div class="text">Рубин Saggitarius<br><br>Произход: Плевен, България<br>Вид: Червено вино<br>Сорт: Рубин<br>Реколта: 2015г.</div>
+              <div class="text">Melnik Jubilee 1300<br><br>Произход: Мелник, България<br>Вид: Червено вино<br>Сорт: Мелник юбилеен 1300<br>Реколта: 2017г.</div>
             </div>
           </div>
           <div class="picture-container">
             <img src="pictures/Iskr.jpg">
             <div class="overlay">
-              <div class="text">Рубин Saggitarius<br><br>Произход: Плевен, България<br>Вид: Червено вино<br>Сорт: Рубин<br>Реколта: 2015г.</div>
+              <div class="text">Iskra<br><br>Произход: Лясковец, България<br>Вид: Червено пенливо вино<br>Сорт: Мерло<br>Реколта: 2015г.</div>
             </div>
           </div>
           <div class="picture-container">
@@ -71,15 +76,15 @@
             </div>
           </div>
           <div class="picture-container">
-            <img src="pictures/Rubin.jpg">
+            <img src="pictures/ZeylaRose.jpg">
             <div class="overlay">
-              <div class="text">Blush<br><br>Произход: Варна, България<br>Вид: Розе<br>Сорт: Сорт грозде Пино Ноар<br>Реколта: 2021г.</div>
+              <div class="text">Зейла<br><br>Произход: Карлово, България<br>Вид: Розе<br>Сорт: Каберне Совиньон<br>Реколта: 2020г.</div>
             </div>
           </div>
           <div class="picture-container">
-            <img src="pictures/Rubin.jpg">
+            <img src="pictures/StaroselSTAR.jpg">
             <div class="overlay">              
-              <div class="text">Blush<br><br>Произход: Варна, България<br>Вид: Розе<br>Сорт: Сорт грозде Пино Ноар<br>Реколта: 2021г.</div></div>
+              <div class="text">Винено съкровище "Старосел"<br><br>Произход: Старосел, България<br>Вид: Червено сухо вино<br>Сорт: Сира<br>Реколта: 2018г.</div></div>
             </div>
 
           </div>
@@ -101,49 +106,45 @@
         <p>OfficeWineCatalogue@gmail.com</p>
       </div>
       <div id="location_pic">
-        <img src="pictures/location.png" id="location">
+        <img src="pictures/location.png" id="location-pic">
       </div>
     </div>
 
-    <footer>Copyright © 2021</footer>
+    <div id="winepal" class="tab-content">
+            <!--subscription form -->
+      <form id="subscription-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <input type="submit" value="Submit">
+      </form>
+      <button id="btn-table">Show Wine Pals</button>
+      <!-- table to display the data -->
+      <table id="subscriptions-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Location</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="subscription-table-body">
+        </tbody>
+      </table>
+
+    </div>
+
+    <footer>Wine Catalogue © 2022</footer>
     <script src="script.js"></script>
   </body>
 </html>
-
-<!--<!DOCTYPE html>
-<html>
-<head>
-  <title>Home Page</title>
-  <link rel="stylesheet" type="text/css" href="home.css">
-</head>
-<body>
-  <nav>
-    <a href="#" id="home-tab">Home</a>
-    <a href="#" id="catalogue-tab">Catalogue</a>
-    <a href="#" id="contacts-tab">Contacts</a>
-    <a href="../../index.html" id="exit-tab">Exit</a>
-  </nav>
-  
-  <div id="home" class="tab-content">
-    <h1>Welcome to our website!</h1>
-    <p>This is the home page.</p>
-     <div class="background-image">
-      <div class="label">Welcome to my homepage</div>
-    </div>
-    
-  </div>
-
-  <div id="catalogue" class="tab-content">
-    <h1>Catalogue</h1>
-    <p>This is the catalogue page.</p>
-  </div>
-
-  <div id="contacts" class="tab-content">
-    <h1>Contacts</h1>
-    <p>This is the contacts page.</p>
-  </div>
-  <footer>Copyright © 2021</footer>
-  <script src="script.js"></script>
-</body>
-</html>
--->

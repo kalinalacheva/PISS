@@ -124,3 +124,6 @@ function customAlert(title, message) {
     xhr.send("username=" + username + "&password=" + password + "&email=" + email);
   }
   });
+
+
+  
